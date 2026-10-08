@@ -1,0 +1,93 @@
+/* Minimal, clean design system for the scaffold. */
+:root {
+  --bg: #f6f7f9;
+  --card: #ffffff;
+  --ink: #1c1e21;
+  --muted: #65676b;
+  --line: #e4e6eb;
+  --accent: #1877f2;
+  --accent-dark: #0f5fd0;
+  --good: #31a24c;
+  --warn: #e5a100;
+  --bad: #e0245e;
+  --radius: 10px;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+}
+.shell { display: flex; min-height: 100vh; }
+.nav {
+  width: 210px; flex-shrink: 0;
+  background: var(--card); border-right: 1px solid var(--line);
+  padding: 20px 14px; display: flex; flex-direction: column; gap: 4px;
+}
+.brand { font-weight: 700; font-size: 18px; margin-bottom: 16px; padding: 0 8px; }
+.nav a, .nav .link {
+  padding: 9px 10px; border-radius: 8px; text-decoration: none;
+  color: var(--ink); font-size: 14px; border: none; background: none;
+  cursor: pointer; text-align: left;
+}
+.nav a:hover, .nav .link:hover { background: var(--bg); }
+.nav a.active { background: #e7f0fe; color: var(--accent); font-weight: 600; }
+.main { flex: 1; padding: 28px; max-width: 1080px; }
+.card {
+  background: var(--card); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 18px; margin-bottom: 16px;
+}
+h1 { font-size: 24px; margin: 0 0 16px; }
+h2 { font-size: 17px; margin: 0 0 12px; }
+label { display: block; font-size: 13px; color: var(--muted); margin: 12px 0 4px; }
+input, select, textarea {
+  width: 100%; padding: 9px 10px; font-size: 14px;
+  border: 1px solid var(--line); border-radius: 8px; background: #fff;
+}
+textarea { min-height: 110px; resize: vertical; }
+button.primary {
+  background: var(--accent); color: #fff; border: none; border-radius: 8px;
+  padding: 10px 18px; font-size: 14px; cursor: pointer; margin-top: 14px;
+}
+button.primary:hover { background: var(--accent-dark); }
+button.ghost {
+  background: #fff; border: 1px solid var(--line); border-radius: 8px;
+  padding: 7px 12px; font-size: 13px; cursor: pointer;
+}
+button.ghost:hover { background: var(--bg); }
+button.danger { color: var(--bad); }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+.kpi { font-size: 30px; font-weight: 700; }
+.kpi-label { color: var(--muted); font-size: 13px; }
+.table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.table th, .table td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); }
+.table th { color: var(--muted); font-weight: 600; font-size: 12px; text-transform: uppercase; }
+.badge {
+  display: inline-block; padding: 3px 10px; border-radius: 999px;
+  font-size: 12px; font-weight: 600;
+}
+.badge.scheduled { background: #e7f0fe; color: var(--accent); }
+.badge.published { background: #e6f6ea; color: var(--good); }
+.badge.failed { background: #fde7ee; color: var(--bad); }
+.badge.ACTIVE { background: #e6f6ea; color: var(--good); }
+.badge.PAUSED { background: #f0f2f5; color: var(--muted); }
+.badge.ok { background: #e6f6ea; color: var(--good); }
+.setting-row { padding: 12px 0; border-bottom: 1px solid var(--line); }
+.setting-row:last-of-type { border-bottom: none; }
+.setting-head { display: flex; align-items: center; gap: 10px; }
+.setting-head strong { font-size: 14px; }
+.small { font-size: 12px; }
+.setting-row .row { margin-top: 6px; }
+.setting-row input { flex: 1; min-width: 260px; }
+.error { background: #fde7ee; color: #8a1538; padding: 10px 14px; border-radius: 8px; margin-bottom: 12px; font-size: 14px; }
+.notice { background: #e7f0fe; color: #0f3d8a; padding: 10px 14px; border-radius: 8px; margin-bottom: 12px; font-size: 14px; }
+.account-pick { display: flex; gap: 8px; flex-wrap: wrap; }
+.account-pick button {
+  border: 1px solid var(--line); background: #fff; border-radius: 8px;
+  padding: 8px 12px; cursor: pointer; font-size: 13px;
+}
+.account-pick button.sel { border-color: var(--accent); background: #e7f0fe; font-weight: 600; }
+.muted { color: var(--muted); font-size: 13px; }
+.row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.login-wrap { max-width: 420px; margin: 80px auto; text-align: center; }
